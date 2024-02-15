@@ -13,5 +13,5 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 
     Page<Restaurant> findAllByActiveTrue(Pageable pageable);
 
-    Optional<Restaurant> findByIdActiveTrue(Long id);
+    Optional<Restaurant> findByIdAndActiveTrue(Long id);
 }

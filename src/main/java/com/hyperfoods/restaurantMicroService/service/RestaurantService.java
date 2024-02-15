@@ -9,8 +9,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class RestaurantService {
 
@@ -25,7 +23,7 @@ public class RestaurantService {
     }
 
     public Restaurant findById(Long id) {
-        return repository.findByIdActiveTrue(id).orElse(null);
+        return repository.findByIdAndActiveTrue(id).orElse(null);
     }
 
     public Page findAll(Pageable pageable) {
